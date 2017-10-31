@@ -2073,6 +2073,18 @@ struct task_struct {
 	unsigned long	task_state_change;
 #endif
 	int pagefault_disabled;
+	atomic64_t *concurrent_active_time;
+#ifdef CONFIG_THREAD_INFO_IN_TASK
+	/* A live task holds one reference. */
+	atomic_t stack_refcount;
+#endif
+
+	struct {
+		struct work_struct work;
+		atomic_t running;
+		bool free_stack;
+	} async_free;
+
 /* CPU-specific state of this task */
 	struct thread_struct thread;
 /*
