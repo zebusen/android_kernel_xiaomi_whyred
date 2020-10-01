@@ -673,7 +673,14 @@ KBUILD_CFLAGS	+= $(call cc-disable-warning, attribute-alias)
 ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
 KBUILD_CFLAGS	+= -Os
 else
+ifeq ($(cc-name),gcc)
 KBUILD_CFLAGS	+= -O3
+KBUILD_CFLAGS	+= -mcpu=cortex-a73.cortex-a53
+KBUILD_AFLAGS	+= -mcpu=cortex-a73.cortex-a53
+ifeq ($(cc-name),clang)
+KBUILD_CFLAGS   += -O3
+endif
+endif
 endif
 
 ifdef CONFIG_CC_WERROR
