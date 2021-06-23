@@ -654,12 +654,8 @@ ifdef CONFIG_LD_LLD
 LD		:= $(LDLLD)
 ifdef CONFIG_LTO
 LTO_CFLAGS    := -flto -flto=jobserver -fno-fat-lto-objects \
-                 -fuse-linker-plugin -fwhole-program
-KBUILD_CFLAGS += $(LTO_CFLAGS) --param=max-inline-insns-auto=1000 \
-		 --param=inline-min-speedup=15 \
-		 --param=max-inline-insns-single=200 \
-		 --param=max-inline-insns-auto=30 \
-		 --param=early-inlining-insns=14
+                 -fuse-linker-plugin -fwhole-program -fipa-pta
+KBUILD_CFLAGS += $(LTO_CFLAGS) --param=max-inline-insns-auto=1000
 LTO_LDFLAGS   := $(LTO_CFLAGS) -Wno-lto-type-mismatch -Wno-psabi \
                  -Wno-stringop-overflow -flinker-output=nolto-rel
 LDFINAL       := $(CONFIG_SHELL) $(srctree)/scripts/gcc-ld $(LTO_LDFLAGS)
