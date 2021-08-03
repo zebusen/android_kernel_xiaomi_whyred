@@ -24,7 +24,7 @@ steps:
     - # git clone --depth=1 --quiet https://github.com/OdSazib/halcyon_kernel_xiaomi_sdm660.git -b eas
     - # git clone --depth=1 --quiet https://github.com/pix106/android_kernel_xiaomi_sdm660_southwest.git -b 11.0-eas-wifi-p
     - git clone --depth=1 --quiet https://github.com/zebusen/buildscript.git
-    - script -c "bash -x buildscript/rad.sh --clang-aosp --oldcam"
+    - script -c "bash -x buildscript/rad.sh --aosp-clang --oldcam"
     - # script -c "bash -x myscript/strixeas.sh"
     - # script -c "bash -x myscript/panda419.sh"
     - # script -c "bash -x myscript/extended.sh"
