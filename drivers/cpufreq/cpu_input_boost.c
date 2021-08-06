@@ -24,7 +24,7 @@ static unsigned int cpu_freq_min_lp __read_mostly =
 	CONFIG_CPU_FREQ_MIN_LP;
 static unsigned int cpu_freq_min_hp __read_mostly =
 	CONFIG_CPU_FREQ_MIN_PERF;
-static unsigned int cpu_freq_idle_lp__read_mostly =
+static unsigned int cpu_freq_idle_lp __read_mostly =
 	CONFIG_CPU_FREQ_IDLE_LP;
 
 static unsigned short input_boost_duration __read_mostly =
