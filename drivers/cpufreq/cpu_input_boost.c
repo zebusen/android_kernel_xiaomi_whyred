@@ -100,7 +100,7 @@ static unsigned int get_min_freq(struct cpufreq_policy *policy)
 
 	if (cpumask_test_cpu(policy->cpu, cpu_lp_mask))
 		freq = cpu_freq_min_lp;
-	else (cpumask_test_cpu(policy->cpu, cpu_lp_perf))
+	else
 		freq = cpu_freq_min_hp;
 
 	return max(freq, policy->cpuinfo.min_freq);
@@ -112,7 +112,7 @@ static unsigned int get_idle_freq(struct cpufreq_policy *policy)
 
 	if (cpumask_test_cpu(policy->cpu, cpu_lp_mask))
 		freq = cpu_freq_idle_lp;
-	else (cpumask_test_cpu(policy->cpu, cpu_lp_perf))
+	else
 		freq = CONFIG_CPU_FREQ_IDLE_PERF;
 
 	return max(freq, policy->cpuinfo.min_freq);
