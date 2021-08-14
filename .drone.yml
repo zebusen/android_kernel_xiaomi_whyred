@@ -19,4 +19,4 @@ steps:
     - git clone --depth=1 --quiet https://github.com/zebusen/android_kernel_xiaomi_whyred.git -b test3 source && cd source
     - git clone --depth=1 --quiet https://github.com/zebusen/buildscript.git
     - # script -c "bash -x buildscript/rad.sh --gcc-gnu --gnu-10 --oldcam"
-    - script -c "bash -x buildscript/rad.sh --aosp-clang --oldcam
+    - script -c "bash -x buildscript/rad.sh --aosp-clang --oldcam"
