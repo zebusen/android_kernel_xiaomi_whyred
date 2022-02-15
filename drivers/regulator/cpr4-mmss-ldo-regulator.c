@@ -122,12 +122,12 @@ static const struct cpr3_fuse_param sdm660_ldo_cpr_cl_enable_param[] = {
 
 /* Open loop voltage fuse reference voltages in microvolts */
 static const int sdm660_mmss_fuse_ref_volt[SDM660_MMSS_FUSE_CORNERS] = {
-	585000,
+	485000,
+	545000,
 	645000,
-	725000,
+	690000,
 	790000,
-	870000,
-	925000,
+	825000,
 };
 
 #define SDM660_MMSS_FUSE_STEP_VOLT		10000
