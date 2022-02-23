@@ -6,7 +6,7 @@ clone:
 
 steps:
 - name: gnu-gcc oldcam
-  image: archlinux:base-devel
+  image: panchajanya1999/archlinux:latest
   environment:
       TELEGRAM_TOKEN:
         from_secret: TG_BOT_API
@@ -14,8 +14,8 @@ steps:
         from_secret: PAT
   commands:
     - # curl https://raw.githubusercontent.com/theradcolor/lazyscripts/master/etc/workaround > workaround && bash workaround
-    - curl -LO "https://repo.archlinuxcn.org/x86_64/glibc-linux4-2.33-4-x86_64.pkg.tar.zst" && bsdtar -C / -xvf "glibc-linux4-2.33-4-x86_64.pkg.tar.zst"
-    - pacman -Sy bc curl zip wget git lld --noconfirm
+    - # curl -LO "https://repo.archlinuxcn.org/x86_64/glibc-linux4-2.33-4-x86_64.pkg.tar.zst" && bsdtar -C / -xvf "glibc-linux4-2.33-4-x86_64.pkg.tar.zst"
+    - # pacman -Sy bc curl zip wget git lld --noconfirm
     - git clone --depth=1 --quiet https://zebusen:$PERSONAL_TOKEN@github.com/zebusen/android_kernel_xiaomi_whyred.git -b slmk-hmp-newww source && cd source
     - git clone --depth=1 --quiet https://github.com/zebusen/buildscript.git
-    - script -c "bash -x buildscript/rad.sh --aosp-clang --newcam --slmk --hmp"
+    - script -c "bash -x buildscript/rad.sh --gcc-gnu --gnu-10 --newcam --slmk --hmp"
